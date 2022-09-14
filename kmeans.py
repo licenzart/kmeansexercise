@@ -35,4 +35,4 @@ else:
     plt.scatter(X['Annual_Income_(k$)'], X['Spending_Score'], c=y_kmeans, s=50, cmap='viridis')
     centers = kmeans.cluster_centers_
     plot = plt.scatter(centers[:,0], centers[:,1], c='black', s=200, alpha=0.5);
-    st.pychart(plot)
+    st.pyplot(plot)
