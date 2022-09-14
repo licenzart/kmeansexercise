@@ -17,11 +17,11 @@ option = st.sidebar.selectbox(
 
 if option=='whole data':
     whole = df
-    st.write(whole)
+    st.table(whole)
     
 if option=='description':
     chart_data = df.describe()
-    st.write(chart_data)
+    st.table(chart_data)
 
 else:
     kmeans = KMeans(n_clusters=5)
