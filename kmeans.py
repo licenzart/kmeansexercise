@@ -14,17 +14,18 @@ st.header("My first Streamlit App for Mall Dataset")
 
 option = st.sidebar.selectbox(
     'Select a mini project',
-     ['whole data', 'description','KMeans cluster'])
+     ['Whole data', 'Description','KMeans cluster'])
 
-if option=='whole data':
+if option=='Whole data':
     whole = df
     st.table(whole)
     
-elif option=='description':
+elif option=='Description':
     chart_data = df.describe()
     st.table(chart_data)
 
 else:
+    st.write("KMeans Cluster Plot")
     #Preprocessing
     features = ['Annual_Income_(k$)', 'Spending_Score']
     X = df[features]
