@@ -20,7 +20,7 @@ if option=='whole data':
     whole = df
     st.table(whole)
     
-if option=='description':
+elif option=='description':
     chart_data = df.describe()
     st.table(chart_data)
 
