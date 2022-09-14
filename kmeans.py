@@ -26,8 +26,9 @@ if option=='description':
 
 else:
     #Preprocessing
-    X = df.drop(['Wine'], axis=1)
-    y = df['Wine']
+    features = ['Annual_Income_(k$)', 'Spending_Score']
+    X = df[features]
+    plt.scatter(X['Annual_Income_(k$)'], X['Spending_Score']);
     kmeans = KMeans(n_clusters=5)
     kmeans.fit(X)
     y_kmeans = kmeans.predict(X)
