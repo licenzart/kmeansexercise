@@ -8,9 +8,7 @@ from sklearn import datasets
 
 file = "mall_customer.csv"
 df = pd.read_csv(file)
-#Preprocessing
-X = df.drop(['Wine'], axis=1)
-y = df['Wine']
+
 
 st.header("My first Streamlit App for Mall Dataset")
 
@@ -27,10 +25,13 @@ if option=='description':
     st.table(chart_data)
 
 else:
+    #Preprocessing
+    X = df.drop(['Wine'], axis=1)
+    y = df['Wine']
     kmeans = KMeans(n_clusters=5)
     kmeans.fit(X)
     y_kmeans = kmeans.predict(X)
     plt.scatter(X['Annual_Income_(k$)'], X['Spending_Score'], c=y_kmeans, s=50, cmap='viridis')
     centers = kmeans.cluster_centers_
-    KMeans_data = plt.scatter(centers[:,0], centers[:,1], c='black', s=200, alpha=0.5);
-    st.write(KMeans_data)
+    plt.scatter(centers[:,0], centers[:,1], c='black', s=200, alpha=0.5);
+    st.write(Kmeansclustering)
