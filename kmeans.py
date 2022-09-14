@@ -8,6 +8,9 @@ from sklearn import datasets
 
 file = "mall_customer.csv"
 df = pd.read_csv(file)
+#Preprocessing
+X = df.drop(['Wine'], axis=1)
+y = df['Wine']
 
 st.header("My first Streamlit App for Mall Dataset")
 
