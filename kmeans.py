@@ -9,7 +9,7 @@ import plotly.tools
 file = "mall_customer.csv"
 df = pd.read_csv(file)
 
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.header("My first Streamlit App for Mall Dataset")
 
 option = st.sidebar.selectbox(
@@ -36,4 +36,4 @@ else:
     centers = kmeans.cluster_centers_
     plt.scatter(centers[:,0], centers[:,1], c='black', s=200, alpha=0.5);
     st.pyplot()
-    st.set_option('deprecation.showPyplotGlobalUse', False)
+    
