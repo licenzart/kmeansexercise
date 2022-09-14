@@ -1,17 +1,22 @@
 #Import Packages
-
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.cluster import KMeans
 from sklearn import datasets
 import plotly.tools
+
+#Load file
 file = "mall_customer.csv"
 df = pd.read_csv(file)
 
+#To avoid showing the warning sign
 st.set_option('deprecation.showPyplotGlobalUse', False)
+
+#Big title
 st.header("My first Streamlit App for Mall Dataset")
 
+#For interactive purposes
 option = st.sidebar.selectbox(
     'Select a mini project',
      ['Whole data', 'Description','KMeans cluster'])
@@ -23,7 +28,8 @@ if option=='Whole data':
 elif option=='Description':
     chart_data = df.describe()
     st.table(chart_data)
-
+    
+#shows the kMeans Cluster plot
 else:
     st.write("KMeans Cluster Plot")
     #Preprocessing
